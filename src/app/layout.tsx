@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
+import Header from "@/components/header/Header";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +22,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body className={`${inter.className} bg-mainBackground text-mainColor`}>
         <ToastContainer theme="colored" position="top-center" />
-        <main className="container">{children}</main>
+        <PageTransition>
+          <Header />
+          <main className="container">{children}</main>
+        </PageTransition>
       </body>
     </html>
   );

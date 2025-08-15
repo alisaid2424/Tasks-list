@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .navLinks a {
+    @apply hover:text-red-500 duration-200 transition-colors font-semibold;
+  }
+
+  .main-btn {
+    @apply text-2xl font-semibold bg-cyan-300 text-black py-2 px-5 my-10 w-fit mx-auto rounded-full uppercase italic ring-4 ring-cyan-300 ring-offset-4 ring-offset-white;
+  }
+
+  .block {
+    @apply flex-1 h-full bg-[#e3e4d8] scale-x-0 origin-left;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 767px) {
+    .navLinksWraper {
+      @apply absolute start-0 top-full w-full bg-gray-100  transition-all duration-300;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+  }
+}
